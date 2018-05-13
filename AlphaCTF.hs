@@ -1,5 +1,5 @@
 -- Created by Phillip Tran 999818578
---            Jackie Sun
+--            Jackie Sun 912072142
 
 
 type Board  = ([Char], Int)
