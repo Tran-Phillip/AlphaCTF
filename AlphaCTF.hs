@@ -68,9 +68,9 @@ else []
 main::IO()
 
 
-getValue:: [Char] -> Char ->Int -> Int
+getValue:: [Char] -> Char ->Int -> Board
 getValue b color index dim count --count accumulates the value, currently is num of pawns
-  |  index == (dim^2)       = count -- base case, reach end of board
+  |  index == (dim^2)       = (b, count) -- base case, reach end of board, return the board
   |  b!!index == color      = getValue b color (index + 1) (count + 1)
   |  otherwise              = getValue b color (index + 1) count
 
