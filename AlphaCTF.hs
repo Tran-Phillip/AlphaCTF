@@ -1,5 +1,5 @@
 -- Created by Phillip Tran 999818578
---            Jackie Sun
+--            Jackie Sun 912072142
 
 
 type Board  = ([Char], Int)
@@ -66,6 +66,14 @@ checkUp b index color dim =
 then setAt (index + dim) 0 color (setAt index 0 '-' b )
 else []
 main::IO()
+
+
+getValue:: [Char] -> Char ->Int -> Int
+getValue b color index dim count --count accumulates the value, currently is num of pawns
+  |  index == (dim^2)       = count -- base case, reach end of board
+  |  b!!index == color      = getValue b color (index + 1) (count + 1)
+  |  otherwise              = getValue b color (index + 1) count
+
 
 main = do
   putStrLn "Hello"
